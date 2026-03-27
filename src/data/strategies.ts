@@ -98,7 +98,7 @@ export const strategies: Strategy[] = [
   {
     id: 'halal',
     name: 'HALAL',
-    color: '#C4B5FD',
+    color: '#FBBF24',
     icon: 'SecurityCheckIcon',
     pair: 'BTC / USDT Futures',
     type: 'Trading Systems',

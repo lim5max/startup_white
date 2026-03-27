@@ -61,5 +61,5 @@ export type TimePeriod = keyof typeof chartData;
 export const activeStrategies = [
   { id: 'red', name: 'RED', allocated: 15000, returnPercent: 18.2, color: '#F87171', icon: 'ZapIcon' },
   { id: 'blue', name: 'BLUE', allocated: 35000, returnPercent: 12.3, color: '#60A5FA', icon: 'Target02Icon' },
-  { id: 'halal', name: 'HALAL', allocated: 25640.74, returnPercent: 8.1, color: '#C4B5FD', icon: 'SecurityCheckIcon' },
+  { id: 'halal', name: 'HALAL', allocated: 25640.74, returnPercent: 8.1, color: '#FBBF24', icon: 'SecurityCheckIcon' },
 ];

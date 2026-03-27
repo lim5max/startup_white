@@ -44,7 +44,7 @@ function TransactionRow({ tx }: { tx: Transaction }) {
   const isPositive = tx.amount >= 0;
 
   return (
-    <div className="flex items-center gap-3 py-3 border-b border-card-border/40 last:border-0">
+    <div className="flex items-center gap-3 py-3">
       <div
         className="w-9 h-9 rounded-[12px] flex items-center justify-center shrink-0"
         style={{ backgroundColor: meta.bgColor, border: `1px solid ${meta.color}20` }}
@@ -109,12 +109,12 @@ export function Home() {
   const displayName = userName.charAt(0).toUpperCase() + userName.slice(1);
 
   return (
-    <div className="space-y-3 -mx-4">
+    <div className="space-y-3">
       {/* ═══ HERO CARD: header + balance + actions + chart + period ═══ */}
-      <div className="mx-4 rounded-card bg-card border border-card-border overflow-hidden relative">
+      <div className="rounded-card bg-card border border-card-border overflow-hidden relative">
         {/* Subtle glow — only when has balance */}
         {kycCompleted && (
-          <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[280px] h-[160px] bg-positive/[0.04] rounded-full blur-[60px] pointer-events-none" />
+          <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[280px] h-[160px] bg-accent/[0.06] rounded-full blur-[60px] pointer-events-none" />
         )}
 
         <div className="relative">
@@ -220,7 +220,7 @@ export function Home() {
       </div>
 
       {/* ═══ BENTO GRID ═══ */}
-      <div className="px-4 grid grid-cols-2 gap-2.5">
+      <div className="grid grid-cols-2 gap-2.5">
 
         {/* Active Strategies — full width */}
         <div className="col-span-2">
@@ -247,29 +247,31 @@ export function Home() {
                 </button>
               </div>
             ) : (
-              <div className="space-y-2">
-                {activeStrategies.map((s) => {
+              <div>
+                {activeStrategies.map((s, i) => {
                   const SIcon = strategyIcons[s.icon] || ZapIcon;
                   return (
-                  <button
-                    key={s.id}
-                    onClick={() => navigate(`/strategies/${s.id}`)}
-                    className="w-full flex items-center justify-between p-2.5 rounded-[12px] bg-surface/50 hover:bg-surface transition-colors cursor-pointer"
-                  >
-                    <div className="flex items-center gap-2.5">
-                      <div
-                        className="w-8 h-8 rounded-[10px] flex items-center justify-center"
-                        style={{ backgroundColor: s.color + '15' }}
-                      >
-                        <SIcon size={16} style={{ color: s.color }} />
+                  <div key={s.id}>
+                    <button
+                      onClick={() => navigate(`/strategies/${s.id}`)}
+                      className="w-full flex items-center justify-between py-3 hover:opacity-80 transition-opacity cursor-pointer"
+                    >
+                      <div className="flex items-center gap-2.5">
+                        <div
+                          className="w-8 h-8 rounded-[10px] flex items-center justify-center"
+                          style={{ backgroundColor: s.color + '15' }}
+                        >
+                          <SIcon size={16} style={{ color: s.color }} />
+                        </div>
+                        <div className="text-left">
+                          <p className="text-sm font-medium text-text-primary">{s.name}</p>
+                          <p className="text-xs text-text-muted">${s.allocated.toLocaleString()}</p>
+                        </div>
                       </div>
-                      <div className="text-left">
-                        <p className="text-sm font-medium text-text-primary">{s.name}</p>
-                        <p className="text-xs text-text-muted">${s.allocated.toLocaleString()}</p>
-                      </div>
-                    </div>
-                    <span className="text-sm font-semibold text-positive tabular-nums">+{s.returnPercent}%</span>
-                  </button>
+                      <span className="text-sm font-semibold text-positive tabular-nums">+{s.returnPercent}%</span>
+                    </button>
+                    {i < activeStrategies.length - 1 && <div className="border-b border-card-border ml-[42px]" />}
+                  </div>
                   );
                 })}
               </div>
@@ -320,8 +322,11 @@ export function Home() {
               )}
             </div>
             {kycCompleted ? (
-              transactions.slice(0, 5).map((tx) => (
-                <TransactionRow key={tx.id} tx={tx} />
+              transactions.slice(0, 5).map((tx, i) => (
+                <div key={tx.id}>
+                  <TransactionRow tx={tx} />
+                  {i < 4 && <div className="border-b border-card-border ml-12" />}
+                </div>
               ))
             ) : (
               <div className="text-center py-6">

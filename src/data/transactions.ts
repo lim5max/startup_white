@@ -26,5 +26,5 @@ export const transactionMeta: Record<TransactionType, { color: string; bgColor: 
   profit: { color: '#22C55E', bgColor: '#22C55E15' },
   deposit: { color: '#3B82F6', bgColor: '#3B82F615' },
   withdrawal: { color: '#F97316', bgColor: '#F9731615' },
-  referral: { color: '#A78BFA', bgColor: '#A78BFA15' },
+  referral: { color: '#FBBF24', bgColor: '#FBBF2415' },
 };

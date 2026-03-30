@@ -48,7 +48,7 @@ export function Profile() {
             {initials}
           </div>
           <div>
-            <p className="text-sm font-medium text-text-primary">{userEmail || 'demo@nexus.io'}</p>
+            <p className="text-sm font-medium text-text-primary">{userEmail || 'demo@helios.io'}</p>
             <p className="text-xs text-text-muted">Member since January 2025</p>
           </div>
         </div>

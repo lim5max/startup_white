@@ -13,7 +13,7 @@ export function Register() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    register(email || 'demo@nexus.io', password || 'demo');
+    register(email || 'demo@helios.io', password || 'demo');
     navigate('/onboarding');
   };
 
@@ -24,7 +24,7 @@ export function Register() {
       <div className="w-full max-w-[390px] relative">
         <div className="text-center mb-10">
           <h1 className="text-2xl font-bold tracking-[-0.03em] text-text-primary mb-1">Create Account</h1>
-          <p className="text-sm text-text-muted">Start investing with NEXUS</p>
+          <p className="text-sm text-text-muted">Start investing with HELIOS CORE</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">

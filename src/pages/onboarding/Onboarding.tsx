@@ -6,7 +6,7 @@ import { ChartLineData02Icon, Shield01Icon, Wallet01Icon, RocketIcon } from 'hug
 const slides = [
   {
     icon: RocketIcon,
-    title: 'Welcome to NEXUS',
+    title: 'Welcome to HELIOS CORE',
     desc: 'AI-powered crypto investment platform. Let algorithms work for your capital 24/7.',
   },
   {

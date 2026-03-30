@@ -136,11 +136,11 @@ export function Support() {
       <Card>
         <p className="text-xs text-text-muted mb-2">Or reach us directly</p>
         <div className="space-y-1.5">
-          <a href="mailto:support@nexus.io" className="block text-sm text-accent hover:text-accent-hover transition-colors">
-            support@nexus.io
+          <a href="mailto:support@helios.io" className="block text-sm text-accent hover:text-accent-hover transition-colors">
+            support@helios.io
           </a>
           <a href="#" className="block text-sm text-accent hover:text-accent-hover transition-colors">
-            Telegram: @nexus_support
+            Telegram: @helios_support
           </a>
         </div>
       </Card>

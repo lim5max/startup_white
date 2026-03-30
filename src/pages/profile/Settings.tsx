@@ -30,7 +30,7 @@ export function Settings() {
         <div>
           <label className="text-xs text-text-muted">Email</label>
           <input
-            value={userEmail || 'demo@nexus.io'}
+            value={userEmail || 'demo@helios.io'}
             readOnly
             className="w-full bg-input-bg border border-input-border rounded-input px-4 py-2.5 text-sm text-text-muted mt-1 cursor-not-allowed"
           />

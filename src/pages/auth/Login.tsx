@@ -12,7 +12,7 @@ export function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    login(email || 'demo@nexus.io', password || 'demo');
+    login(email || 'demo@helios.io', password || 'demo');
     navigate('/home');
   };
 
@@ -25,7 +25,7 @@ export function Login() {
         {/* Header */}
         <div className="text-center mb-10">
           <h1 className="text-2xl font-bold tracking-[-0.03em] text-text-primary mb-1">
-            NEXUS
+            HELIOS CORE
           </h1>
           <p className="text-sm text-text-muted">Investment Platform</p>
         </div>

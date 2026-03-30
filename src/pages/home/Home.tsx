@@ -112,10 +112,6 @@ export function Home() {
     <div className="space-y-3">
       {/* ═══ HERO CARD: header + balance + actions + chart + period ═══ */}
       <div className="rounded-card bg-card border border-card-border overflow-hidden relative">
-        {/* Subtle glow — only when has balance */}
-        {kycCompleted && (
-          <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[280px] h-[160px] bg-accent/[0.06] rounded-full blur-[60px] pointer-events-none" />
-        )}
 
         <div className="relative">
           {/* Header bar */}

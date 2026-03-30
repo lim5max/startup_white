@@ -16,7 +16,7 @@ interface ChartProps {
 function CustomTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
   return (
-    <div className="bg-[#18181B] border border-[#27272A] rounded-[10px] px-3 py-2 text-xs shadow-xl">
+    <div className="bg-white border border-[#E5E5E5] rounded-[10px] px-3 py-2 text-xs shadow-xl">
       <p className="text-text-muted text-[10px]">{label}</p>
       <p className="text-text-primary font-semibold">${payload[0].value.toLocaleString()}</p>
     </div>
@@ -41,7 +41,7 @@ function CustomActiveDot({ cx, cy, color }: any) {
     <g>
       <circle cx={cx} cy={cy} r={10} fill={color} opacity={0.08} />
       <circle cx={cx} cy={cy} r={5} fill={color} opacity={0.15} />
-      <circle cx={cx} cy={cy} r={3} fill={color} stroke="#18181B" strokeWidth={1.5} />
+      <circle cx={cx} cy={cy} r={3} fill={color} stroke="#FFFFFF" strokeWidth={1.5} />
     </g>
   );
 }
@@ -75,7 +75,7 @@ export function Chart({
         <div className="absolute right-3 top-1 z-10 pointer-events-none">
           <div
             className="px-2 py-0.5 rounded-[8px] text-[10px] font-bold"
-            style={{ backgroundColor: color, color: '#111113' }}
+            style={{ backgroundColor: color, color: '#FFFFFF' }}
           >
             {formatted}
           </div>
@@ -88,15 +88,15 @@ export function Chart({
             <linearGradient id={gradId} x1="0" y1="0" x2="0" y2="1">
               {seamless ? (
                 <>
-                  <stop offset="0%" stopColor={color} stopOpacity={0.30} />
-                  <stop offset="40%" stopColor={color} stopOpacity={0.12} />
-                  <stop offset="80%" stopColor={color} stopOpacity={0.04} />
-                  <stop offset="100%" stopColor={color} stopOpacity={0.01} />
+                  <stop offset="0%" stopColor={color} stopOpacity={0.45} />
+                  <stop offset="40%" stopColor={color} stopOpacity={0.20} />
+                  <stop offset="80%" stopColor={color} stopOpacity={0.08} />
+                  <stop offset="100%" stopColor={color} stopOpacity={0.02} />
                 </>
               ) : (
                 <>
-                  <stop offset="0%" stopColor={color} stopOpacity={0.18} />
-                  <stop offset="50%" stopColor={color} stopOpacity={0.06} />
+                  <stop offset="0%" stopColor={color} stopOpacity={0.30} />
+                  <stop offset="50%" stopColor={color} stopOpacity={0.12} />
                   <stop offset="100%" stopColor={color} stopOpacity={0} />
                 </>
               )}
@@ -106,7 +106,7 @@ export function Chart({
           {showYAxis && (
             <YAxis
               orientation="right"
-              tick={{ fill: '#555', fontSize: 10, fontFamily: 'inherit' }}
+              tick={{ fill: '#9CA3AF', fontSize: 10, fontFamily: 'inherit' }}
               axisLine={false}
               tickLine={false}
               tickFormatter={(v) => yAxisFormat === 'percent' ? `${v}%` : v >= 1000 ? `$${(v / 1000).toFixed(0)}k` : `$${v}`}
